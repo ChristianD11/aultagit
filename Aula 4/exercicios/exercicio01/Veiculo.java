@@ -1,3 +1,4 @@
+
 public class Veiculo {
     String marca, modelo;
     double consumo;
