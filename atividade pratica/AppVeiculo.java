@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AppVeiculo {
     
-    public static <GerenciarVeiculos> void main(String[] args) {
+    public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         
         GerenciarVeiculos gerencia = new GerenciarVeiculos();
@@ -11,28 +11,28 @@ public class AppVeiculo {
         double Valordemercado;
 
         do {
-            System.out.println("1-Adicionar Veículo");
-            System.out.println("2-Remover Veículo");
-            System.out.println("3-Buscar Veículo pela placa");
-            System.out.println("4-Lista de Veiculos");
-            System.out.println("5-Obter Valor do Imposto");
-            System.out.println("6-listar Carros por combustivel");
-            System.out.println("7-Finalizar");
+            System.out.println("1 Add o veículo");
+            System.out.println("2 Remover o veículo");
+            System.out.println("3 Buscar o veículo por placa dada");
+            System.out.println("4 Lista de todos os veiculos");
+            System.out.println("5 Obter valor de imposto pela placa");
+            System.out.println("6 Mostrar lista de carros por combustivel dado");
+            System.out.println("7 Fechar programa");
                 menu = Integer.parseInt(entrada.nextLine());switch (menu) {
                 case 1:
-                    System.out.println("Qual o Modelo do Carro?");
+                    System.out.println("Qual o modelo do veiculo?");
                     Modelo = entrada.nextLine();
-                    System.out.println("Qual a Marca do Carro?");
+                    System.out.println("Qual a marca do veiculo?");
                     Marca = entrada.nextLine();
-                    System.out.println("Qual a Placa do Carro?");
+                    System.out.println("Qual a placa do veiculo?");
                     Placa = entrada.nextLine();
-                    System.out.println("Qual o tipo de Combustivel do Carro?");
+                    System.out.println("Qual o tipo de combustivel do veiculo?");
                     Tipodecombustivel = entrada.nextLine();
-                    System.out.println("Qual o Ano de Fabricaçâo do Carro");
+                    System.out.println("Qual o ano de fabricaçâo do veiculo");
                     Anodefabricacao = Integer.parseInt(entrada.nextLine());
-                    System.out.println("Qual o Valor de Mercado do Carro?");
+                    System.out.println("Qual o valor de mercado do veiculo?");
                     Valordemercado = Double.parseDouble(entrada.nextLine());
-                    ((Object) gerencia).adicionarVeiculo(Modelo, Marca, Placa, Tipodecombustivel, Anodefabricacao, Valordemercado);
+                    ((GerenciarVeiculos) gerencia).adicionarVeiculo(Modelo, Marca, Placa, Tipodecombustivel, Anodefabricacao, Valordemercado);
                     
                     break;
             
@@ -40,17 +40,17 @@ public class AppVeiculo {
             
                     System.out.println("Qual a Placa do Veículo a ser Removido?");
                     Placa = entrada.nextLine();
-                    ((Object) gerencia).remover(Placa);
+                    ((GerenciarVeiculos) gerencia).remover(Placa);
                     break;
             
                 case 3:
-                    System.out.println("Qual a Placa do Veículo a ser encontrado?");
+                    System.out.println("Qual a placa do veículo a ser encontrado?");
                     Placa = entrada.nextLine();
-                    System.out.println(((Object) gerencia).buscarPorPlaca(Placa));
+                    System.out.println(((GerenciarVeiculos) gerencia).buscarPorPlaca(Placa));
                     break;
             
                 case 4:
-                    System.out.println(((Object) gerencia).listarVeiculos());    
+                    System.out.println(((GerenciarVeiculos) gerencia).listarVeiculos());    
                 
                     
                     
@@ -69,7 +69,7 @@ public class AppVeiculo {
                     break;  
 
                 default:
-                    System.out.println("Opção Invalida!\n");
+                    System.out.println("Opção invalida!\n");
                     break;
             }
         } while (menu != 7);
